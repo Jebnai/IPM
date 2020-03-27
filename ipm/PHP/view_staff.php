@@ -1,5 +1,7 @@
 <?php require "../PHP/connection.php";
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
 ?>
 
 <head>
@@ -18,7 +20,7 @@ session_start();
         <th>Surname</th>
         <th>Name</th>
         <th>Email</th>
-        <th>Commission ID</th>
+        <th>Commission</th>
       </tr>
     </thead>
     <tbody>
@@ -32,9 +34,6 @@ session_start();
             <td bgcolor="#9933ff"><?php echo  $row ['staff_Surname']; ?></td>
             <td bgcolor="#9933ff"><?php echo $row['staff_Name']; ?></td>
             <td bgcolor="#9933ff"><?php echo $row['staff_Email']; ?></td>
-            <td bgcolor="#9933ff"><?php echo  $row ['commission_ID']; ?></td>
-          </tr>
+            <td bgcolor="#9933ff"><?php echo  $row ['staff_Commission']; ?></td>
       <?php  } ?>
-    </tbody>
-  </table>
 </body>

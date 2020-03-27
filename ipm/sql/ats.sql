@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 20, 2020 at 03:35 PM
+-- Generation Time: Mar 07, 2020 at 01:43 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -45,11 +45,11 @@ INSERT INTO `blanks` (`blank_ID`, `blank_Type`, `blank_Advisor_ID`, `blank_Manag
 (2, 101, 200, NULL, 3032020),
 (3, 101, 201, NULL, 3032020),
 (5, 101, 201, NULL, 3032020),
-(6, 101, 201, NULL, 3032020),
-(7, 444, 201, NULL, 3032020),
-(8, 444, 201, NULL, 3032020),
-(9, 444, 201, NULL, 3032020),
-(10, 444, 201, NULL, 10032020),
+(6, 444, NULL, NULL, 3032020),
+(7, 444, NULL, NULL, 3032020),
+(8, 444, NULL, NULL, 3032020),
+(9, 444, NULL, NULL, 3032020),
+(10, 444, NULL, NULL, 10032020),
 (11, 201, NULL, NULL, 3032020),
 (12, 201, NULL, NULL, 3032020),
 (13, 201, NULL, NULL, 3032020),
@@ -78,16 +78,7 @@ CREATE TABLE `coupons` (
 --
 
 INSERT INTO `coupons` (`coupon_ID`, `blank_ID`, `ticket_ID`, `coupon_Number`, `coupon_Origin`, `coupon_Destination`, `coupon_Time`, `coupon_Date`) VALUES
-(13, 7, 1, 0, 'London', 'Berlin', '23:00:00', '2020-03-15'),
-(14, 7, 1, 0, 'Berlin', 'Barcelona', '12:12:00', '2020-03-20'),
-(15, 7, 1, 0, 'Azza', 'Azza', '03:32:00', '2020-03-27'),
-(16, 7, 1, 0, 'Azza', 'Azza', '03:43:00', '2020-03-29'),
-(20, 3, 81, 0, 'Jebnai', 'Mert\'s Ass', '00:59:00', '2020-04-05'),
-(23, 8, 82, 0, '', '', '00:00:00', '0000-00-00'),
-(36, 5, 83, 0, 'London', 'Berlin', '23:00:00', '2020-03-28'),
-(39, 6, 84, 0, 'London', 'Berlin', '23:00:00', '2020-03-19'),
-(40, 9, 85, 0, 'London', 'Berlin', '21:00:00', '2020-03-28'),
-(41, 10, 86, 0, 'Jebnai', 'Berlin', '00:59:00', '2020-03-28');
+(8, 3, 1, NULL, 'London', 'Berlin', '23:00:00', '2020-03-13');
 
 -- --------------------------------------------------------
 
@@ -101,14 +92,6 @@ CREATE TABLE `currency` (
   `currency_Rate` decimal(10,0) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `currency`
---
-
-INSERT INTO `currency` (`currency_ID`, `currency_Name`, `currency_Rate`) VALUES
-(1, 'Dollars', '1'),
-(2, 'Argentinean Pesos', '67');
-
 -- --------------------------------------------------------
 
 --
@@ -118,21 +101,11 @@ INSERT INTO `currency` (`currency_ID`, `currency_Name`, `currency_Rate`) VALUES
 CREATE TABLE `customers` (
   `customer_ID` int(10) NOT NULL,
   `customer_Type` varchar(8) DEFAULT NULL,
-  `customer_Name` tinytext,
-  `customer_Surname` tinytext,
-  `customer_Email` varchar(50) NOT NULL,
+  `customer_Name` varchar(8) DEFAULT NULL,
   `customer_LP` date DEFAULT NULL,
   `customer_Debt` int(11) DEFAULT NULL,
   `discount_ID` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `customers`
---
-
-INSERT INTO `customers` (`customer_ID`, `customer_Type`, `customer_Name`, `customer_Surname`, `customer_Email`, `customer_LP`, `customer_Debt`, `discount_ID`) VALUES
-(1, 'Regular', 'Jebnai', 'Beyene', '', '2020-02-19', 500, 1),
-(2, 'Valued', 'Ivan', 'Bosch', 'bosch.ivan99@gmail.com', '2020-01-15', 9000, NULL);
 
 -- --------------------------------------------------------
 
@@ -145,13 +118,6 @@ CREATE TABLE `discounts` (
   `discount_Type` varchar(10) DEFAULT NULL,
   `discount_Amount` double DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `discounts`
---
-
-INSERT INTO `discounts` (`discount_ID`, `discount_Type`, `discount_Amount`) VALUES
-(1, 'Flex', 10);
 
 -- --------------------------------------------------------
 
@@ -186,20 +152,10 @@ CREATE TABLE `sales` (
   `currency_Rate` decimal(10,0) NOT NULL,
   `customer_ID` int(10) NOT NULL,
   `ticket_ID` int(10) NOT NULL,
-  `sales_Charge` decimal(11,0) NOT NULL,
+  `sales_charge` decimal(11,0) NOT NULL,
   `payment_Type` varchar(10) NOT NULL,
   `card_Digits` int(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `sales`
---
-
-INSERT INTO `sales` (`sales_ID`, `sales_Type`, `staff_ID`, `currency_ID`, `currency_Rate`, `customer_ID`, `ticket_ID`, `sales_Charge`, `payment_Type`, `card_Digits`) VALUES
-(1, 'Domestic', 200, 1, '1', 1, 1, '501', 'Card', 3567),
-(2, 'Interline', 201, 2, '67', 2, 83, '3', 'Card', 9999),
-(3, 'Interline', 201, 1, '1', 2, 85, '1', 'Cash', 0),
-(5, 'Interline', 201, 1, '1', 2, 86, '1', 'Cash', 0);
 
 -- --------------------------------------------------------
 
@@ -213,14 +169,14 @@ CREATE TABLE `staff` (
   `staff_Name` tinytext,
   `staff_Surname` tinytext,
   `staff_Email` varchar(100) DEFAULT NULL,
-  `staff_Commission` int(2) NOT NULL
+  `staff_Comission` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `staff`
 --
 
-INSERT INTO `staff` (`staff_ID`, `staff_Type`, `staff_Name`, `staff_Surname`, `staff_Email`, `staff_Commission`) VALUES
+INSERT INTO `staff` (`staff_ID`, `staff_Type`, `staff_Name`, `staff_Surname`, `staff_Email`, `staff_Comission`) VALUES
 (200, 'Advisor', '555', '555', '123@gmail.com', 0),
 (201, 'Advisor', '666', '666', 'bosch.ivan99@gmail.com', 0);
 
@@ -244,17 +200,7 @@ INSERT INTO `tickets` (`ticket_ID`) VALUES
 (82),
 (83),
 (84),
-(85),
-(86),
-(87),
-(88),
-(89),
-(90),
-(151),
-(152),
-(153),
-(154),
-(155);
+(85);
 
 --
 -- Indexes for dumped tables
@@ -342,25 +288,25 @@ ALTER TABLE `blanks`
 -- AUTO_INCREMENT for table `coupons`
 --
 ALTER TABLE `coupons`
-  MODIFY `coupon_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `coupon_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `currency`
 --
 ALTER TABLE `currency`
-  MODIFY `currency_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `currency_ID` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `customer_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `customer_ID` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `discounts`
 --
 ALTER TABLE `discounts`
-  MODIFY `discount_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `discount_ID` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `log_in`
@@ -372,7 +318,7 @@ ALTER TABLE `log_in`
 -- AUTO_INCREMENT for table `sales`
 --
 ALTER TABLE `sales`
-  MODIFY `sales_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `sales_ID` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `staff`
@@ -384,7 +330,7 @@ ALTER TABLE `staff`
 -- AUTO_INCREMENT for table `tickets`
 --
 ALTER TABLE `tickets`
-  MODIFY `ticket_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=156;
+  MODIFY `ticket_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 
 --
 -- Constraints for dumped tables
