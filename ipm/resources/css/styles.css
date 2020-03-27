@@ -110,12 +110,12 @@
   font-family: "Roboto", sans-serif;
   background: #92cc72;
 }
-#shwTblBlank a, #shwTblStaff a, #shwTblCustomer a{
+#shwTblBlank a, #shwTblStaff a, #shwTblCustomer a, #shwTblDiscount a{
   font-family: "Roboto", sans-serif;
   text-decoration: none;
   color: black;
 }
-#shwTblBlank:hover, #shwTblStaff:hover, #shwTblCustomer:hover{
+#shwTblBlank:hover, #shwTblStaff:hover, #shwTblCustomer:hover, #shwTableDiscount:hover{
   background: #b3b3b3;
   -webkit-transition: background-color 0.5s ease-out;
   -moz-transition: background-color 0.5s ease-out;
