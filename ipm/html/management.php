@@ -54,6 +54,7 @@ function loadDiscount() {
       <div class="col-sm-12 text-center"><h2 id="pageM">Management</h2></div>
     </div>
     <!-- blanks tab -->
+    <div class="container-fluid" id="tableContainer">
     <div class="row">
       <div class="col-lg text-center" id="shwTblBlank"><a href="#" onclick="loadBlank()">Allocate blanks</a></div>
     </div>
@@ -64,7 +65,9 @@ function loadDiscount() {
         ?>
       </div>
     </div>
+    </div>
     <!-- customer tab -->
+    <div class="container-fluid" id="tableContainer">
     <div class="row">
       <div class="col-lg text-center" id="shwTblCustomer" ><a href="#" onclick="loadCustomer()">Customers</a></div>
     </div>
@@ -75,7 +78,9 @@ function loadDiscount() {
         ?>      
       </div>
     </div>
+</div>
     <!-- staff tab -->
+    <div class="container-fluid" id="tableContainer">
     <div class="row">
       <div class="col-lg text-center" id="shwTblStaff"><a href="#" onclick="loadStaff()">View staff</a></div>
     </div>
@@ -86,7 +91,9 @@ function loadDiscount() {
         ?>
       </div>
     </div>
+</div>
     <!-- discount tab -->
+    <div class="container-fluid" id="tableContainer">
     <div class="row">
       <div class="col-lg text-center" id="shwTblDiscount"><a href="#" onclick="loadDiscount()">Discount</a></div>
     </div>
@@ -97,6 +104,7 @@ function loadDiscount() {
         ?>
       </div>
     </div>
+</div>
   </div>
 </body>
 </html>
