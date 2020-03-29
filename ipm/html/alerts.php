@@ -3,10 +3,14 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Alert!</title>
+<link rel = "stylesheet" href = "../resources/css/styles.css">
+<script src="../js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../resources/css/bootstrap.min.css">
   </head>
   <body class="alert_Container">
-    <h1>Late Payments:</h1>
+    <div class="container">
+    <dic class="row justify-content-center"><h1>Late Payments</h1></div>
     <?php
 
       //Set today's date
@@ -26,12 +30,14 @@
         //and how long has it been since he paid and he has a debt, if he doesn't have a debt it means
         //he doesn't own any money
         if ($interval->format('%a') >= 30 && $row['customer_Debt'] > 0) {
-          echo "<div class ='alert'>Payment Due by: ".$row['customer_Name']. " ". $row['customer_Surname'];
-          echo "<br>Amount: ". $row['customer_Debt'];
-          echo "<br>Last Paid: ".$interval->format('%a')." Days ago <br></div>";
+          
+            echo "<div class='row justify-content-around' id='alertRow'><div class ='d-flex justify-content-center alert-danger' id='alertCol'>Payment Due by: ".$row['customer_Name']. " ". $row['customer_Surname'];
+            echo "<br>Amount: ". $row['customer_Debt'];
+            echo "<br>Last Paid: ".$interval->format('%a')." Days ago <br></div></div>";
+          
         }
       }
     ?>
-
+  </div>
   </body>
 </html>
