@@ -3,11 +3,11 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../resources/css/bootstrap.min.css">
- <script src="../js/jquery.min.js"></script>
- <script src="../js/bootstrap.min.js"></script>
- <script src="../js/jquery.tabledit.min.js"></script>
- <script src="../js/edit_blank_alloc.js"></script>    <script type="text/javascript">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-tabledit@1.0.0/jquery.tabledit.min.js"></script>
+    <script type="text/javascript">
     //Function that checks wheter a sale is domestic or interline and display a dropdown
     //with appropiate options in each case.
     function chooseSale(){
@@ -168,6 +168,7 @@
   </head>
 
   <body>
+    <h3>Sale</h3>
     <div class="sales_container">
       <!--First element of the container the report sale form-->
       <div>
@@ -204,11 +205,20 @@
           <div id="card"></div>
           <label for="sales_Charge">Amount to pay: </label>
           <input type="number" name="sales_Charge" min="1" required>
+          <input type="checkbox" name="late_Payment" value="true">
+          <label for="late_Payment">Is a Late Payment?</label><br>
           <button type='submit' id='submit' name='coupon_Submission'>Submit</button>
           <div id="submit"></div>
         </form>
       </div>
-
+      <div>
+        <h3>Refund a Sale</h3>
+        <form action="../PHP/refund.php" method="post">
+          <label for="refundID">Enter ticket:</label>
+          <input type="text" name="refundID"/>
+          <button type="submit" name="refund_Submission">Submit</button>
+        </form>
+      </div>
       <!--Second element of the container AKA the table that shows all the sales so far -->
       <div>
         <table class="table">
