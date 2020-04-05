@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  
+
 <title>Management</title>
 <head>
   <link rel = "stylesheet" href = "../resources/css/styles.css">
@@ -71,11 +71,11 @@ function loadDiscount() {
     <div class="row">
       <div class="col-lg text-center" id="shwTblCustomer" ><a href="#" onclick="loadCustomer()">Customers</a></div>
     </div>
-    <div class="row">    
+    <div class="row">
       <div class="col-lg text-center" id="customerContainer">
         <?php
         include ('../PHP/customer.php');
-        ?>      
+        ?>
       </div>
     </div>
 </div>

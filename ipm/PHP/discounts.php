@@ -1,7 +1,7 @@
 <?php require "../PHP/connection.php";
-if (session_status() == PHP_SESSION_NONE) {
-  session_start();
-}
+  if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+  }
 ?>
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>

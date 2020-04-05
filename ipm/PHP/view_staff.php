@@ -20,7 +20,7 @@ if (session_status() == PHP_SESSION_NONE) {
         <th>Surname</th>
         <th>Name</th>
         <th>Email</th>
-        <th>Commission</th>
+        <th>Commission ID</th>
       </tr>
     </thead>
     <tbody>
@@ -34,6 +34,9 @@ if (session_status() == PHP_SESSION_NONE) {
             <td bgcolor="#9933ff"><?php echo  $row ['staff_Surname']; ?></td>
             <td bgcolor="#9933ff"><?php echo $row['staff_Name']; ?></td>
             <td bgcolor="#9933ff"><?php echo $row['staff_Email']; ?></td>
-            <td bgcolor="#9933ff"><?php echo  $row ['staff_Commission']; ?></td>
+            <td bgcolor="#9933ff"><?php echo  $row ['commission_ID']; ?></td>
+          </tr>
       <?php  } ?>
+    </tbody>
+  </table>
 </body>
