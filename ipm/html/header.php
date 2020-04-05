@@ -20,18 +20,6 @@
         <li class="nav-item active">
           <a class="nav-link" href="homepage.php">Homepage</a>
           </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="administrator.html">Administrator</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="management.php">Management</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="sales.php">Sales</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="reports.html">Reports</a>
-        </li>
     </ul>
   </div>
     <div class="navbar-collapse collapse order-3 dual-collapse2">
