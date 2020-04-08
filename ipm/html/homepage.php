@@ -5,21 +5,14 @@
 ?>
 <style>
 </style>
-<body>
-<div class="row" style="background:#f2f2f2;border:solid;border-color:rgba(126, 239, 104, 0.8);padding:2%; margin:5%;font-family: 'Roboto', sans-serif;">
+<div class="row" style="background:#f2f2f2;border:solid;border-color:#f2f2d0;padding:2%; margin:5%;font-family: 'Roboto', sans-serif;">
   <?php
     if (isset($_SESSION['user_Type'])) {
       if ($_SESSION['user_Type'] == 'Management') {
         echo "
-<<<<<<< Updated upstream
         <div class='col-md'>
             <ul class='hPageActive'>
             <h4>Management</h4>
-=======
-        <div class='homepage_Lists'>
-          <h4>Management</h4>
-          <ul>
->>>>>>> Stashed changes
             <li><a href='../PHP/view_staff.php' target ='_blank'>View Travel Advisors</a></li>
             <li><a href='../PHP/blanks.php' target ='_blank'>Allocate Blanks</a></li>
             <li><a href='../PHP/view_staff.php' target ='_blank'>Set Commission Rate</a></li>
@@ -94,38 +87,20 @@
     if (isset($_SESSION['user_Type'])) {
       if($_SESSION['user_Type'] == 'Advisor')  {
         echo "
-<<<<<<< Updated upstream
         <div class='col-md'>
              <ul class='hPageActive'>
              <h4>Reports</h4>
-=======
-          <div class='col-md'>
-            
-            <ul class='hPageActive'>
-            <h4>Reports</h4>
->>>>>>> Stashed changes
               <li><a href='' target ='_blank'>View Refund Records</a></li>
               <li><a href='../PHP/TST_pdf.php' target ='_blank'>Ticket Stock Turnover Report</a></li>
               <li><a href='../PHP/ISRI.php' target ='_blank'>Individual Sales Report Local</a></li>
               <li><a href='../PHP/ISRL.php' target ='_blank'>Individual Sales Report Interline</a></li>
-              
-              <li id='hPageInactive'><a>Global Sales Report Local</a></li>
-              <li id='hPageInactive'><a>Global Sales Report Interline</a></li>
-
             </ul>
           </div>";
       } else if ($_SESSION['user_Type'] == 'Management') {
         echo "
-<<<<<<< Updated upstream
         <div class='col-md'>
            <ul class='hPageInactive'>
            <h4>Reports</h4>
-=======
-          <div class='col-md'>
-            
-            <ul class='hPageActive'>
-            <h4>Reports</h4>
->>>>>>> Stashed changes
               <li><a href='' target ='_blank'>View Refund Records</a></li>
               <li><a href='../PHP/TST_pdf.php' target ='_blank'>Ticket Stock Turnover Report</a></li>
               <li><a href='../PHP/ISRI.php' target ='_blank'>Individual Sales Report Local</a></li>
@@ -136,20 +111,11 @@
           </div>";
       } else {
         echo "
-<<<<<<< Updated upstream
           <div class='homepage_Lists'>
             <h2>Reports</h2>
             <ul>
               <li><a>View Reports</a></li>
               <li><a>View Refund Records</a></li>
-=======
-          <div class='col-md'>
-            
-            <ul class='hPageInactive'>
-            <h4>Reports</h4>
-              <li><a id='hPageInactive'>View Reports</a></li>
-              <li><a id='hPageInactive'>View Refund Records</a></li>
->>>>>>> Stashed changes
             </ul>
           </div>";
       }
@@ -157,5 +123,4 @@
   ?>
 </div>
 </div>
-</body>
 </html>
