@@ -144,6 +144,16 @@
   border-radius: 1px;
   font-weight: bold;
 }
+/* ---------button in new user page--------- */
+.cAcc{
+  border-radius: 1px;
+  color:white;
+  background-color:#4CAF50;
+}
+.cAcc:hover{
+  color:white;
+}
+/* ----------------------------------------- */
 .hPageActive{
   list-style-type: none;
 }
@@ -159,6 +169,15 @@
   list-style-type: none;
   color: gray;
 }
+#hPageInactive a{
+  color:gray;
+  
+}
+/* inactive items in active menu lists */
+.hPageActive #hPageInactive:hover{
+  background-color: #f2f2f2;
+}
+/* --------------------- */
 #shwTblBlank, #shwTblStaff, #shwTblCustomer, #shwTblDiscount{
   margin-bottom: 1%;
 }
@@ -169,7 +188,7 @@
   background-color: #92cc72;
 }
 #navLogo{
-  /* font-weight: bold; */
+  font-weight: bold;
 }
 #hPageActive h4,#hPageActive h4{
   /* text-decoration:none; */
@@ -191,6 +210,31 @@
   margin-bottom: 1%;
   background-color:#f2f2f2;
 }
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {   
+  border-color: rgba(126, 239, 104, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6);
+  outline: 0 none;
+}
+/* .custom-control-input:checked ~ .custom-control-label::before {
+  color: #fff;
+  border-color: #92cc72;
+  background-color: #92cc72;
+} */
 /* .homeMenu{
   height: 100%;
   display: flex;
